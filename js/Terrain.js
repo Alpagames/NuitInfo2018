@@ -38,7 +38,7 @@ class Terrain {
             this.nbArmes = 0;
 
         //Une chance sur 10 d'avoir la pinata et la batte
-        if (alea(0, 10) === 5)
+        if (alea(2, 4) === 4)
             this.pinata = true;
         else
             this.pinata = false;
@@ -111,11 +111,41 @@ class Terrain {
                 let y = alea(1, 8);
                 if (this.terrain[x][y] === VIDE &&
                     (this.terrain[x - 1][y] === VIDE && this.terrain[x + 1][y] === VIDE && this.terrain[x][y + 1] === VIDE && this.terrain[x][y - 1])) {
+                    this.terrain[x][y] = PINATA;
+                    done = true;
+                }
+            } while (!done)
+            done = false;
+            do {
+                let x = alea(1, 8);
+                let y = alea(1, 8);
+                if (this.terrain[x][y] === VIDE &&
+                    (this.terrain[x - 1][y] === VIDE && this.terrain[x + 1][y] === VIDE && this.terrain[x][y + 1] === VIDE && this.terrain[x][y - 1])) {
                     this.terrain[x][y] = ARME;
                     done = true;
                 }
             } while (!done)
         }
+        done = false;
+        do {
+            let x = alea(1, 8);
+            let y = alea(1, 8);
+            if (this.terrain[x][y] === VIDE &&
+                (this.terrain[x - 1][y] === VIDE && this.terrain[x + 1][y] === VIDE && this.terrain[x][y + 1] === VIDE && this.terrain[x][y - 1])) {
+                this.terrain[x][y] = VAISSEAU;
+                done = true;
+            }
+        } while (!done)
+        done = false;
+        do {
+            let x = alea(1, 8);
+            let y = alea(1, 8);
+            if (this.terrain[x][y] === VIDE &&
+                (this.terrain[x - 1][y] === VIDE && this.terrain[x + 1][y] === VIDE && this.terrain[x][y + 1] === VIDE && this.terrain[x][y - 1])) {
+                this.terrain[x][y] = PIECE;
+                done = true;
+            }
+        } while (!done)
 
         this.tabToHTML(this.terrain);
 
