@@ -12,7 +12,12 @@ class Element {
     }
     
     display() {
-        this.game.add.sprite(this.x, this.y, this.keySprite);
+        this.sprite = this.game.add.sprite(this.x, this.y, this.keySprite);
+    }
+    
+    destroy() {
+        this.sprite.destroy();
+        this = null;
     }
     
 }
