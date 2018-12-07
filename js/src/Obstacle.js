@@ -9,7 +9,16 @@ class Obstacle extends Element {
 class Roche extends Obstacle {
     
     constructor(game, x, y, autodisplay = true) {
-        super(game, x, y, 'roche', autodisplay);
+        var n;
+        switch (alea(1,4)) {
+            case 1: n = 1;
+                break;
+            case 2: n = 2;
+                break;
+            case 3: n = 3;
+                break;
+        }
+        super(game, x, y, 'roche'+n, autodisplay);
     }
     
 }

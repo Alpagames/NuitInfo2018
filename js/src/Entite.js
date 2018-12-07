@@ -2,7 +2,7 @@ class Entite extends Element {
     
     constructor(game, x, y, keySprite, data = {}, autodisplay = true) {
         super(game, x, y, keySprite, autodisplay);
-        
+
         if (data.life != null) {
             this.life = data.life;
         } else {
@@ -26,7 +26,7 @@ class Entite extends Element {
     
 }
 
-class Ennemi {
+class Ennemi extends Entite {
     
     constructor(game, x, y, data = {}, autodisplay = true) {
         super(game, x, y, 'ennemi', data, autodisplay);
@@ -37,7 +37,7 @@ class Ennemi {
     
 }
 
-class Pinata {
+class Pinata extends Entite {
     
     constructor(game, x, y, data = {}, autodisplay = true) {
         super(game, x, y, 'ennemi', data, autodisplay);
@@ -48,10 +48,10 @@ class Pinata {
     
 }
 
-class Papalpaga {
+class Papalpaga extends Entite {
     
     constructor(game, x, y, data = {}, autodisplay = true) {
-        super(game, x, y, 'ennemi', data, autodisplay);
+        super(game, x, y, 'papalpaga', data, autodisplay);
         
         this.life = 1;
         this.attack = 0;
