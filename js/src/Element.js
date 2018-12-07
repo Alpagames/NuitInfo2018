@@ -17,7 +17,6 @@ class Element {
     
     destroy() {
         this.sprite.destroy();
-        this = null;
     }
     
 }

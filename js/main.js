@@ -1,22 +1,32 @@
-//Créer la scène
-let scene = new Phaser.Scene('Game');
-
-//Charger les assets
-scene.preload = function() {
-    this.load.image('papalpaga', 'assets/images/papalpaga_sprite.png');
+var config = {
+    type: Phaser.AUTO,
+    width: 800,
+    height: 600,
+    scene: {
+        preload: preload,
+        create: create,
+        update: update
+    }
 };
 
-scene.create = function() {
-    this.add.sprite(0,0,'papalpaga')
+var game = new Phaser.Game(config);
+
+function preload ()
+{
+    this.load.image('background', 'assets/images/background.jpg');
+    this.load.spritesheet('papalpaga', 'assets/images/papalpaga.png', {
+        frameWidth: 128,
+        frameHeight: 128
+    });
 }
 
-//Configurer le jeu
-let config = {
-    type: Phaser.AUTO,
-    width: 700,
-    height: 700,
-    scene: scene
-};
+function create ()
+{
+    this.add.image(0, 0, 'background');
+    let prite = game.add.sprite(0,0,'papalpaga');
+//    let alpaga = new Papalpaga(this, 0, 0);
+}
 
-//Créer un nouveau jeu en utilisant la config
-let game = new Phaser.Game(config);
+function update ()
+{
+}
