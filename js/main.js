@@ -14,19 +14,16 @@ var game = new Phaser.Game(config);
 function preload ()
 {
     this.load.image('background', 'assets/images/background.jpg');
-    this.load.spritesheet('papalpaga', 'assets/images/papalpaga.png', {
+    this.load.spritesheet('papalpaga', 'assets/images/papalpaga_sprite.png', {
         frameWidth: 128,
         frameHeight: 128
     });
 }
 
-function create ()
-{
+function create () {
     this.add.image(0, 0, 'background');
-    let prite = game.add.sprite(0,0,'papalpaga');
-//    let alpaga = new Papalpaga(this, 0, 0);
+    new Papalpaga(this, 0, 0);
 }
 
-function update ()
-{
+function update () {
 }
