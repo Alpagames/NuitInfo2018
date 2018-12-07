@@ -4,7 +4,7 @@ class Element {
         this.game = game;
         this.x = x;
         this.y = y;
-        this.keySprite;
+        this.keySprite = keySprite;
         
         if (autodisplay = true) {
             this.display();
@@ -12,6 +12,8 @@ class Element {
     }
     
     display() {
+        console.log(this.keySprite);
+        console.log(this.game);
         this.sprite = this.game.add.sprite(this.x, this.y, this.keySprite);
     }
     

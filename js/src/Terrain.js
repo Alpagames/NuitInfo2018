@@ -147,8 +147,6 @@ class Terrain {
             }
         } while (!done)
 
-        this.tabToHTML(this.terrain);
-
 
     }
 

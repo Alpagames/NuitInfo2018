@@ -1,10 +1,8 @@
 class Entite extends Element {
     
-    constructor(game, x, y,w,h, keySprite, data = {}, autodisplay = true) {
+    constructor(game, x, y, keySprite, data = {}, autodisplay = true) {
         super(game, x, y, keySprite, autodisplay);
-        
-        this.frameWidth = w;
-        this.frameHeight = h;
+
         if (data.life != null) {
             this.life = data.life;
         } else {
@@ -26,17 +24,11 @@ class Entite extends Element {
         }
     }
     
-    display() {
-                console.log(this.game);
-        this.sprite = this.game.add.sprite(0,0,this.keySprite);
-
-    }
-    
 }
 
 class Ennemi extends Entite {
     
-    constructor(game, x, y,w,h, data = {}, autodisplay = true) {
+    constructor(game, x, y, data = {}, autodisplay = true) {
         super(game, x, y, 'ennemi', data, autodisplay);
         
         this.life = 1;
@@ -47,7 +39,7 @@ class Ennemi extends Entite {
 
 class Pinata extends Entite {
     
-    constructor(game, x, y,w,h, data = {}, autodisplay = true) {
+    constructor(game, x, y, data = {}, autodisplay = true) {
         super(game, x, y, 'ennemi', data, autodisplay);
         
         this.life = 1;
@@ -56,9 +48,9 @@ class Pinata extends Entite {
     
 }
 
-class Papalpaga extends Entite{
+class Papalpaga extends Entite {
     
-    constructor(game, x, y,w,h, data = {}, autodisplay = true) {
+    constructor(game, x, y, data = {}, autodisplay = true) {
         super(game, x, y, 'papalpaga', data, autodisplay);
         
         this.life = 1;
