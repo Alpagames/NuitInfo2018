@@ -1,27 +1,22 @@
-    var config = {
-        type: Phaser.AUTO,
-        width: 1400,
-        height: 700,
-        physics: {
-            default: 'arcade',
-            arcade: {
-                gravity: { y: 200 }
-            }
-        },
-        scene: {
-            preload: preload,
-            create: create
-        }
-    };
+//Créer la scène
+let scene = new Phaser.Scene('Game');
 
-    var game = new Phaser.Game(config);
+//Charger les assets
+scene.preload = function() {
+    this.load.image('papalpaga', 'assets/images/papalpaga_sprite.png');
+};
 
-    function preload ()
-    {
+scene.create = function() {
+    this.add.sprite(0,0,'papalpaga')
+}
 
-    }
+//Configurer le jeu
+let config = {
+    type: Phaser.AUTO,
+    width: 700,
+    height: 700,
+    scene: scene
+};
 
-    function create ()
-    {
-
-    }
+//Créer un nouveau jeu en utilisant la config
+let game = new Phaser.Game(config);
